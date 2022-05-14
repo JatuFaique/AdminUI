@@ -1,0 +1,21 @@
+
+* IMPORTANT
+
+- Do 'npm install' to refresh the package of projects on your system
+- Do 'npm start' to launch the React project
+
+*Instructions ( Added Improvement for second submission )
+
+- Search Bar at the Top provided to filter the table on any values
+
+- Table rows refreshes on every input change
+
+- Select All Button in the most top left cell of the table
+
+- Delete and Edit buttons at the bottom to edit or delete any selected row 
+
+- Only one row can be edited at a time
+
+- Click on Edit Opens a Floating Modal to Refresh the Values of selected.
+
+- Navigation Buttons at the bottom for table as page number.
