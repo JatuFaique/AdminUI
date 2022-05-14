@@ -10,6 +10,7 @@ export default class EditModal extends Component {
   }
   render() {
     let m1 = null;
+    // eslint-disable-next-line
     this.props.resResult.some((t) => {
       // console.log(this.props.currID);
       //console.log("iska ", t, "ye ", this.props.name);

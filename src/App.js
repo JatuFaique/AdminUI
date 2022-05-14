@@ -150,7 +150,7 @@ export default class App extends Component {
       : (end = start + 10);
 
     let newArray = [...this.state.resResult];
-
+    // eslint-disable-next-line
     this.state.resResult.slice(start, end).map((item, index) => {
       newArray[item.id - 1] = {
         ...newArray[item.id - 1],
@@ -241,6 +241,7 @@ export default class App extends Component {
     }
     let tempfiles = this.state.resResult;
     let filter = [];
+    // eslint-disable-next-line
     tempfiles.map((obj) => {
       if (!checkedList.includes(obj.id)) {
         filter = [...filter, obj];
@@ -302,6 +303,7 @@ export default class App extends Component {
   }
   handleEditSubmit(event, currentEdit) {
     event.preventDefault();
+    // eslint-disable-next-line
     this.state.resP.map((item, i) => {
       if (item.id === currentEdit) {
         let newArray = [...this.state.resP];
@@ -335,6 +337,7 @@ export default class App extends Component {
   }
 
   render() {
+    // eslint-disable-next-line
     let mypage = [...Array(5)].map((a, index) => {
       let index1 = index * 10;
       return this.state.resResult.slice(index1, index1 + 10);
