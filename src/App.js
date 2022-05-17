@@ -173,8 +173,14 @@ export default class App extends Component {
       pageNumber.push(i);
     }
     return (
-      <nav>
-        <ul style={{ display: "inline" }}>
+      <nav className="list__buttons">
+        <ul
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+        >
           <button
             className="btn-class"
             onClick={() => {
@@ -197,7 +203,7 @@ export default class App extends Component {
               style={{
                 listStyleType: "none",
                 display: "inline",
-                padding: "5px",
+                margin: "5px",
               }}
             >
               <button
@@ -352,60 +358,65 @@ export default class App extends Component {
       return (
         <div className="app-container">
           <input placeholder="Search" onChange={this.handleChange}></input>
-          <table className="response-table">
-            <thead>
-              <tr>
-                <th>
-                  <input
-                    type="checkbox"
-                    onChange={(e) => {
-                      this.handleSelectAll(
-                        e,
-                        this.state.checkedList,
-                        this.state.currentPage
-                      );
-                    }}
-                    checked={this.state.selectAll}
-                  ></input>
-                </th>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-              </tr>
-            </thead>
 
-            <tbody>
-              {this.state.resResult
-                .slice(
-                  this.state.currentPage * 10,
-                  this.state.currentPage * 10 + 10
-                )
-                .map((person, i) => (
-                  <tr
-                    key={i}
-                    className={
-                      person.isChecked === true ? "active-row" : "inactice-row"
-                    }
-                  >
-                    <td>
-                      <input
-                        type="checkbox"
-                        name={person.id}
-                        checked={person.isChecked}
-                        onChange={(e) => {
-                          this.handleCheck(person, e);
-                        }}
-                      ></input>
-                    </td>
-                    <td>{person.id}</td>
-                    <td>{person.name}</td>
-                    <td>{person.email}</td>
-                    <td>{person.role}</td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
+          <div className="container">
+            <table className="response-table">
+              <thead>
+                <tr>
+                  <th>
+                    <input
+                      type="checkbox"
+                      onChange={(e) => {
+                        this.handleSelectAll(
+                          e,
+                          this.state.checkedList,
+                          this.state.currentPage
+                        );
+                      }}
+                      checked={this.state.selectAll}
+                    ></input>
+                  </th>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {this.state.resResult
+                  .slice(
+                    this.state.currentPage * 10,
+                    this.state.currentPage * 10 + 10
+                  )
+                  .map((person, i) => (
+                    <tr
+                      key={i}
+                      className={
+                        person.isChecked === true
+                          ? "active-row"
+                          : "inactice-row"
+                      }
+                    >
+                      <td>
+                        <input
+                          type="checkbox"
+                          name={person.id}
+                          checked={person.isChecked}
+                          onChange={(e) => {
+                            this.handleCheck(person, e);
+                          }}
+                        ></input>
+                      </td>
+                      <td>{person.id}</td>
+                      <td>{person.name}</td>
+                      <td>{person.email}</td>
+                      <td>{person.role}</td>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+          </div>
 
           {this.listofAllButtons()}
           <div>

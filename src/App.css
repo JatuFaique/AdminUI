@@ -14,12 +14,6 @@
   border-radius: 50%;
 }
 
-.papa {
-  padding: 500px;
-
-  justify-content: center;
-}
-
 input {
   padding: 0.8em 0em 0.8em 1em;
   background-color: #f2f2f2;
@@ -35,15 +29,34 @@ input {
   margin-right: 50px;
 }
 
+.container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  overflow-x: hidden;
+}
+
 .response-table {
   border-collapse: collapse;
   margin: 0 0 0 0;
   font-size: 0.8em;
-  min-width: 1200px;
+  min-width: 75rem;
+  max-width: 100vw;
   min-height: 300px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table {
+  table-layout: fixed;
+  word-break: break-all;
+}
+
+th,
+td {
+  /* border: 1px solid black; */
+  width: auto;
+  padding: 0 8px;
 }
 
 .response-table thead tr {
@@ -64,9 +77,16 @@ input {
   background-color: rgb(206, 206, 206);
 }
 
+.list__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn-class {
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 5px 10px;
 
   margin-bottom: 1rem;
 
@@ -85,4 +105,50 @@ input {
   border-radius: 0.5rem;
   background-color: #ff7300af;
   color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 0.6rem;
+  }
+  .container {
+    padding-inline: 2em;
+    margin-inline: auto;
+    overflow-x: scroll;
+  }
+  .response-table {
+    border-collapse: collapse;
+    margin: 0 0 0 0;
+    font-size: 0.8em;
+    /* min-width: 75rem;
+    max-width: 100vw; */
+    min-width: 100%;
+    min-height: 300px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  body {
+    font-size: 0.6rem;
+  }
+  .container {
+    padding-inline: 2em;
+    margin-inline: auto;
+    overflow-x: scroll;
+  }
+  .response-table {
+    border-collapse: collapse;
+    margin: 0 0 0 0;
+    font-size: 0.8em;
+    /* min-width: 75rem;
+    max-width: 100vw; */
+    min-width: 100%;
+    min-height: 300px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
 }
